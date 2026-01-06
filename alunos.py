@@ -31,6 +31,12 @@ def validar_nota(texto):
 
 
 
+def validar_status(texto):
+    padrao = r"^[sSnN]$"
+    return bool(re.fullmatch(padrao, texto))
+
+
+
 def cadastrar():
     while True:
         nome = input("\nInsira o nome do aluno: ")
@@ -57,12 +63,20 @@ def cadastrar():
         
         break
 
-            
-    status = (input("O aluno está ativo? (S/N): "))
-    if status == "s":
-        ativo = True
-    else:
-        ativo = False
+    while True:
+
+        status = input("O aluno está ativo? (S/N): ")
+
+        if not validar_status(status):
+            print("\nOpção inválida, tente novamente.")
+            continue
+        else:
+            if status == "s":
+                ativo = True
+            else:
+                ativo = False
+
+        break
 
     aluno = {
         "nome" : nome,
