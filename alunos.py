@@ -187,14 +187,27 @@ def editar_nota():
     if not tem_aluno():
         print("\nNão há alunos registrados\n")
         return
-    
-    aluno = buscar()
-    if aluno:
-        print("\nAluno encontrado:", aluno["nome"])
-        aluno["nota"] = float(input("\nInsira a nova nota do aluno: "))
-        salvar_dados()
-    else:
-        print("Aluno não encontrado")
+
+    while True:
+        aluno = buscar()
+        if aluno:
+            print("\nAluno encontrado:", aluno["nome"])
+            while True:
+
+                nota_texto = input("Insira a nota final do aluno: ")
+
+                if not validar_nota(nota_texto):
+                    print("\nNota inválida, tente novamente.")
+                    continue
+                else:
+                    aluno["nota"] = float(nota_texto)
+                
+                break
+            salvar_dados()
+            break
+        else:
+            print("Aluno não encontrado")
+        
 
 
 
