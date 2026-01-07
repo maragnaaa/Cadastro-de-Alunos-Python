@@ -1,13 +1,17 @@
 import validacoes.tem_aluno as tem_aluno
-from cadastrar_alunos import alunos
+import buscar
 
-def listar_alunos():
+def buscar_nome():
     if not tem_aluno():
         print("\nNão há alunos registrados\n")
         return
-    
-    for aluno in alunos:
+
+    aluno = buscar()
+    if aluno:
+        print("\nAluno encontrado")
         print("\nNome:" ,aluno["nome"])
         print("Nota Final:" ,aluno["nota"])
         print("Ativo:" ,aluno["ativo"])
         print("-------------------------------")
+    else:
+        print("Aluno não encontrado")

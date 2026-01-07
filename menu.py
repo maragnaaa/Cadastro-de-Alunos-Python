@@ -1,6 +1,6 @@
 import dados.carregar_dados as carregar_dados
-import cadastrar_alunos as cadastrar_alunos
-import listar_alunos as listar_alunos
+import cadastrar_alunos 
+import listar_alunos 
 import calcular 
 import listar_aprovados
 import buscar_nome

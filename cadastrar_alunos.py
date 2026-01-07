@@ -4,7 +4,6 @@ import validacoes.validar_nota as validar_nota
 import validacoes.validar_status as validar_status
 import dados.salvar_dados as salvar_dados
 
-
 alunos = []
 
 def cadastrar_alunos():

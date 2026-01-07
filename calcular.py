@@ -1,13 +1,14 @@
 import validacoes.tem_aluno as tem_aluno
 from cadastrar_alunos import alunos
 
-def listar_alunos():
+def calcular():
     if not tem_aluno():
         print("\nNão há alunos registrados\n")
         return
     
+    soma = 0
+
     for aluno in alunos:
-        print("\nNome:" ,aluno["nome"])
-        print("Nota Final:" ,aluno["nota"])
-        print("Ativo:" ,aluno["ativo"])
-        print("-------------------------------")
+        soma += aluno["nota"]
+
+    return soma / len(alunos)
