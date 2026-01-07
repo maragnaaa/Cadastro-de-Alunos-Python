@@ -1,14 +1,14 @@
 import dados.carregar_dados as carregar_dados
-import cadastrar_alunos 
-import listar_alunos 
-import calcular 
-import listar_aprovados
-import buscar_nome
-import editar_nota
-import remover
-import ativar_desativar
+import servicos.cadastrar_alunos as cadastrar_alunos 
+import servicos.listar_alunos as listar_alunos 
+import servicos.calcular as calcular 
+import servicos.listar_aprovados as listar_aprovados
+import servicos.buscar_nome as buscar_nome
+import servicos.editar_nota as editar_nota
+import servicos.remover as remover
+import servicos.ativar_desativar as ativar_desativar
 
-carregar_dados()
+carregar_dados.carregar_dados()
 
 while True:
     print("-------------------------------")
@@ -26,23 +26,23 @@ while True:
     opcao = int(input("Insira sua opção: "))
 
     if opcao == 1:
-        cadastrar_alunos()
+        cadastrar_alunos.cadastrar_alunos()
     elif opcao == 2:
-        listar_alunos()
+        listar_alunos.listar_alunos()
     elif opcao == 3:
-        media = calcular()
+        media = calcular.calcular()
         if media is not None:
             print("\nA média das notas: ", media, "\n")
     elif opcao == 4:
-        listar_aprovados()
+        listar_aprovados.listar_aprovados()
     elif opcao == 5:
-        buscar_nome()
+        buscar_nome.buscar_nome()
     elif opcao == 6:
-        editar_nota()
+        editar_nota.editar_nota()
     elif opcao == 7:
-        remover()
+        remover.remover()
     elif opcao == 8:
-        ativar_desativar()
+        ativar_desativar.ativar_desativar()
     else:
         print("\nEncerrado! :)\n")
         break

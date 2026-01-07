@@ -1,6 +1,4 @@
-from cadastrar_alunos import alunos
-
-def validar_aluno(nome):
+def validar_aluno(nome, alunos):
     nome = nome.strip().lower()
 
     for aluno in alunos:

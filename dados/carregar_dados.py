@@ -1,9 +1,15 @@
 import json
+from modelos.alunos import alunos
 
 def carregar_dados():
-    global alunos
     try:
-        with open("alunos.json", "r") as arq:
-            alunos = json.load(arq)
+        with open("dados/alunos.json", "r", encoding="utf-8") as arq:
+            dados = json.load(arq)
+
+        alunos.clear()
+        alunos.extend(dados)
+
     except FileNotFoundError:
-        alunos = []
+        alunos.clear()
+    except json.JSONDecodeError:
+        alunos.clear()

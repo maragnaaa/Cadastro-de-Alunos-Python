@@ -1,6 +1,6 @@
 import json
-from cadastrar_alunos import alunos
+from modelos.alunos import alunos
 
 def salvar_dados():
-    with open("alunos.json", "w") as arq:
-        json.dump(alunos, arq)
+    with open("dados/alunos.json", "w", encoding="utf-8") as arq:
+        json.dump(alunos, arq, indent=4, ensure_ascii=False)

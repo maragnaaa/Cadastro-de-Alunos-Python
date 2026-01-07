@@ -1,12 +1,13 @@
 import validacoes.tem_aluno as tem_aluno
-import buscar
+import servicos.buscar as buscar
+from modelos.alunos import alunos
 
 def buscar_nome():
-    if not tem_aluno():
+    if not tem_aluno.tem_aluno(alunos):
         print("\nNão há alunos registrados\n")
         return
 
-    aluno = buscar()
+    aluno = buscar.buscar()
     if aluno:
         print("\nAluno encontrado")
         print("\nNome:" ,aluno["nome"])

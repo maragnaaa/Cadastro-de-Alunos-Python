@@ -1,4 +1,2 @@
-from cadastrar_alunos import alunos
-
-def tem_aluno():
+def tem_aluno(alunos):
     return len(alunos) > 0
