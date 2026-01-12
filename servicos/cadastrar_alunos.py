@@ -53,4 +53,4 @@ def cadastrar_alunos():
     }
 
     alunos.append(aluno)
-    salvar_dados.salvar_dados(alunos)
+    salvar_dados.salvar_dados()

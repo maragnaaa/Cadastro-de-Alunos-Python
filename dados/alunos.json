@@ -1,1 +1,7 @@
-[]
+[
+    {
+        "nome": "Mariano",
+        "nota": 6.0,
+        "ativo": true
+    }
+]

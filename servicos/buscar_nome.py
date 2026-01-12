@@ -7,12 +7,14 @@ def buscar_nome():
         print("\nNão há alunos registrados\n")
         return
 
-    aluno = buscar.buscar()
-    if aluno:
-        print("\nAluno encontrado")
-        print("\nNome:" ,aluno["nome"])
-        print("Nota Final:" ,aluno["nota"])
-        print("Ativo:" ,aluno["ativo"])
-        print("-------------------------------")
-    else:
-        print("Aluno não encontrado")
+    while True:
+        aluno = buscar.buscar()
+        if aluno:
+            print("\nAluno encontrado")
+            print("\nNome:" ,aluno["nome"])
+            print("Nota Final:" ,aluno["nota"])
+            print("Ativo:" ,aluno["ativo"])
+            print("-------------------------------")
+            break
+        else:
+            print("Aluno não encontrado")
