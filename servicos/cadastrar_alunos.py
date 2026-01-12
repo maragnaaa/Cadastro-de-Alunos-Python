@@ -10,11 +10,11 @@ def cadastrar_alunos():
         nome = input("\nInsira o nome do aluno: ")
 
         if not validar_nome.validar_nome(nome):
-            print("\nNome inválido, tente novamente.")
+            print("Nome inválido, tente novamente.")
             continue
 
         if validar_aluno.validar_aluno(nome, alunos):
-            print("\nEsse aluno já está cadastrado.")
+            print("Esse aluno já está cadastrado.")
             continue
 
         break
@@ -36,7 +36,7 @@ def cadastrar_alunos():
         status = input("O aluno está ativo? (S/N): ")
 
         if not validar_status.validar_status(status):
-            print("\nOpção inválida, tente novamente.")
+            print("Opção inválida, tente novamente.")
             continue
         else:
             if status == "s":
