@@ -3,5 +3,10 @@
         "nome": "Mariano",
         "nota": 6.0,
         "ativo": true
+    },
+    {
+        "nome": "Gustavo",
+        "nota": 8.0,
+        "ativo": false
     }
 ]

@@ -7,6 +7,7 @@ import servicos.buscar_nome as buscar_nome
 import servicos.editar_nota as editar_nota
 import servicos.remover as remover
 import servicos.ativar_desativar as ativar_desativar
+import validacoes.validar_menu as validar_menu
 
 carregar_dados.carregar_dados()
 
@@ -23,7 +24,12 @@ while True:
     print("9 - Encerrar")
     print("-------------------------------")
 
-    opcao = int(input("Insira sua opção: "))
+    texto_opcao = input("Insira sua opção: ")
+    if not validar_menu.validar_menu(texto_opcao):
+        print("Opção inválida, digite novamente")
+        continue
+    else:
+        opcao = int(texto_opcao)
 
     if opcao == 1:
         cadastrar_alunos.cadastrar_alunos()
