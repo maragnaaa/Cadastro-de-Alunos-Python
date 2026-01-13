@@ -8,26 +8,12 @@ import servicos.editar_nota as editar_nota
 import servicos.remover as remover
 import servicos.ativar_desativar as ativar_desativar
 import validacoes.validar_menu as validar_menu
+from modelos.modelo_menu import menu
 import shutil
 
 carregar_dados.carregar_dados()
 
 largura = shutil.get_terminal_size().columns
-
-
-menu = [
-    "---Sistema de alunos Python---",
-    "1 - Cadastrar aluno",
-    "2 - Listar alunos cadastrados",
-    "2 - Listar alunos cadastrados",
-    "3 - Calcular média de notas",
-    "4 - Listar alunos aprovados",
-    "5 - Buscar aluno pelo nome",
-    "6 - Editar nota do aluno",
-    "7 - Remover aluno",
-    "8 - Ativar / Desativar aluno",
-    "9 - Encerrar"
-]
 
 while True:
     for linha in menu:
