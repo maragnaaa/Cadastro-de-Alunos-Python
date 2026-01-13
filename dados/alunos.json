@@ -13,5 +13,30 @@
         "nome": "Edson",
         "nota": 6.0,
         "ativo": true
+    },
+    {
+        "nome": "Thiago",
+        "nota": 6.0,
+        "ativo": true
+    },
+    {
+        "nome": "George",
+        "nota": 7.0,
+        "ativo": false
+    },
+    {
+        "nome": "Tyler",
+        "nota": 8.0,
+        "ativo": false
+    },
+    {
+        "nome": "Paulo",
+        "nota": 4.9,
+        "ativo": false
+    },
+    {
+        "nome": "Pedro",
+        "nota": 4.5,
+        "ativo": true
     }
 ]
