@@ -1,7 +1,7 @@
 from persistencia.salvar_carregar_alunos import AlunoJSON
 from repositorio.repositorio_aluno import RepositorioAlunos
 import servicos.servicos_menu as menu
-from validacoes.validar_menu import validar_menu
+from validacoes.validacoes import validar_menu
 from modelos.modelo_menu import display
 import shutil
 

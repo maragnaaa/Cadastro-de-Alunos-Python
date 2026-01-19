@@ -1,4 +1,5 @@
-from validacoes.validar_nome import validar_nome
+from validacoes.validacoes import validar_nome
+from validacoes.validacoes import validar_nota
 from modelos.aluno import Aluno
 
 def cadastrar_aluno(repo):
@@ -12,10 +13,17 @@ def cadastrar_aluno(repo):
         break
 
     while True:
-        nota = float(input("Insira a nota do aluno: "))
+        nota_texto = input("Insira a nota do aluno: ")
 
-        aluno = Aluno(nome, nota)
-        repo.adicionar_aluno(aluno)
+        if not validar_nota(nota_texto):
+            print("Nota inválida, tente novamente")
+            continue
+        else:
+            nota = float(nota_texto)
+        break
+
+    aluno = Aluno(nome, nota)
+    repo.adicionar_aluno(aluno)
 
 def listar_alunos(repo):
     for aluno in repo.alunos:
