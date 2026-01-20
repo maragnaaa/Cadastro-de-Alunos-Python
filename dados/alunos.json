@@ -8,5 +8,10 @@
         "nome": "Marcos",
         "nota": 9.9,
         "ativo": true
+    },
+    {
+        "nome": "Oswaldo",
+        "nota": 8.0,
+        "ativo": true
     }
 ]

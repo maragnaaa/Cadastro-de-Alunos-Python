@@ -10,6 +10,10 @@ def cadastrar_aluno(repo):
             print("Nome inválido, tente novamente")
             continue
 
+        if repo.buscar_por_nome(nome):
+            print("Esse aluno já está cadastrado")
+            continue
+        
         break
 
     while True:
@@ -35,4 +39,3 @@ def media(repo):
 def aprovados(repo):
     for aluno in repo.listar_aprovados():
         print(aluno.nome)
-
