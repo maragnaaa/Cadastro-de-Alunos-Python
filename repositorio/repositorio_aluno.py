@@ -24,9 +24,18 @@ class RepositorioAlunos:
         self.persistencia.salvar_alunos(self.alunos)
 
     def calcular_media(self):
-        if not self.alunos:
-            return 0
-        return sum(a.nota for a in self.alunos) / len(self.alunos)
+        soma = 0
+        contador = 0
+
+        for aluno in self.alunos:
+            if aluno.participa_da_media():
+                soma += aluno.nota
+                contador += 1
+
+        if contador == 0:
+            return None
+        
+        return soma / contador
     
     def listar_aprovados(self):
         return [a for a in self.alunos if a.nota >=6]

@@ -48,3 +48,4 @@ def media(repo):
 def aprovados(repo):
     for aluno in repo.listar_aprovados():
         print(aluno.nome)
+

@@ -27,6 +27,9 @@ class Aluno:
             raise ValueError("Nota inválida")      
         self.nota = nova_nota
 
+    def participa_da_media(self):
+        return self.nota >=0 and self.estado == "ATIVO"
+
     def to_dict(self):
         return {
             "nome": self.nome,
