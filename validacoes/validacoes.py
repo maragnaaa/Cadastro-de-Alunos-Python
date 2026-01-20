@@ -11,3 +11,7 @@ def validar_nome(texto):
 def validar_nota(texto):
     padrao_notas = r"^(10(\.0+)?|[0-9](\.\d+)?)$"
     return bool(re.fullmatch(padrao_notas, texto))
+
+def validar_estado(texto):
+    padrao_estado = r"^(ATIVO|INATIVO)$"
+    return bool(re.fullmatch(padrao_estado, texto))

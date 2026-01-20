@@ -1,5 +1,6 @@
 from validacoes.validacoes import validar_nome
 from validacoes.validacoes import validar_nota
+from validacoes.validacoes import validar_estado
 from modelos.aluno import Aluno
 
 def cadastrar_aluno(repo):
@@ -13,7 +14,7 @@ def cadastrar_aluno(repo):
         if repo.buscar_por_nome(nome):
             print("Esse aluno já está cadastrado")
             continue
-        
+
         break
 
     while True:
@@ -26,12 +27,20 @@ def cadastrar_aluno(repo):
             nota = float(nota_texto)
         break
 
-    aluno = Aluno(nome, nota)
+    while True:
+        estado = input("Qual o estado do aluno? (ATIVO|INATIVO): ")
+
+        if not validar_estado(estado):
+            print("Opção inválida, tente novamente")
+            continue
+        break
+
+    aluno = Aluno(nome, nota, estado)
     repo.adicionar_aluno(aluno)
 
 def listar_alunos(repo):
     for aluno in repo.alunos:
-        print(f"{aluno.nome} | {aluno.nota} | {aluno.ativo}")
+        print(f"{aluno.nome} | {aluno.nota} | {aluno.estado}")
 
 def media(repo):
     print("A média das notas:", repo.calcular_media())

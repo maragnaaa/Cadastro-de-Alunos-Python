@@ -1,5 +1,5 @@
 class Aluno:
-    def __init__(self, nome, nota, ativo=True):
+    def __init__(self, nome, nota, estado):
         if not nome.strip():
             raise ValueError("Nome inválido")
 
@@ -8,15 +8,21 @@ class Aluno:
 
         self.nome = nome
         self.nota = nota
-        self.ativo = ativo
+        self.estado = estado
 
-    def ativar_aluno(ativo):
-        ativo = True
+    def ativar_aluno(self):
+        self.estado = "ATIVO"
 
-    def desativar_aluno(ativo):
-        ativo = False
+    def desativar_aluno(self):
+        self.estado = "INATIVO"
 
-    def alterar_nota(self, nova_nota):
+    def pode_editar_nota(self):
+        return self.estado == "ATIVO"
+
+    def editar_nota(self, nova_nota):
+        if not self.pode_editar_nota():
+            print("Aluno inativo não pode alterar a nota")
+            return
         if nova_nota < 0:
             raise ValueError("Nota inválida")      
         self.nota = nova_nota
@@ -25,7 +31,7 @@ class Aluno:
         return {
             "nome": self.nome,
             "nota": self.nota,
-            "ativo": self.ativo
+            "estado": self.estado
         }
     
     @classmethod
@@ -33,5 +39,5 @@ class Aluno:
         return cls(
             dados["nome"],
             dados["nota"],
-            dados["ativo"]
+            dados["estado"]
         )

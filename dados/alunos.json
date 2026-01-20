@@ -2,16 +2,31 @@
     {
         "nome": "Gustavo",
         "nota": 7.0,
-        "ativo": true
+        "estado": "ATIVO"
     },
     {
         "nome": "Marcos",
         "nota": 9.9,
-        "ativo": true
+        "estado": "ATIVO"
     },
     {
         "nome": "Oswaldo",
         "nota": 8.0,
-        "ativo": true
+        "estado": "ATIVO"
+    },
+    {
+        "nome": "Felipe",
+        "nota": 9.0,
+        "estado": "ATIVO"
+    },
+    {
+        "nome": "Paulo",
+        "nota": 8.0,
+        "estado": "ATIVO"
+    },
+    {
+        "nome": "Tyler",
+        "nota": 5.0,
+        "estado": "INATIVO"
     }
 ]
